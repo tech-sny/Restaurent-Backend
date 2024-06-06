@@ -22,15 +22,23 @@ public class Controller {//dummy commit
     public List<OderItemDto> getWebPage() {
         List<OderItemDto> orderList = new ArrayList<>();
         OderItemDto od = new OderItemDto();
-        ItemModel itemModel = itemRepo.findAll().getFirst();//add all one
-        Order order = orderRepo.findAll().getFirst();
-        od.setItemModel(itemModel);
-        od.setPrice(itemModel.getPrice());
+        List<ItemModel> itemModel = itemRepo.findAll();//add all one
+        List<Order> order = orderRepo.findAll();
+        if(!itemModel.isEmpty()){
+           od.setItemModel(itemModel.getFirst());
+           od.setPrice(itemModel.getFirst().getPrice());
+        }
         od.setQuantity(3);
-        od.setOrderModel(order);
+        if(!order.isEmpty())
+            od.setOrderModel(order.getFirst());
         orderList.add(od);
         return orderList;
 
+    }
+    @GetMapping("/how")
+    public String helloAws() {
+        return "Hello CI/CD with AWS";
+    }
     }
 
     
