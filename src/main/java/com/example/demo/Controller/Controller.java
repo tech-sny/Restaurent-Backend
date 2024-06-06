@@ -22,7 +22,7 @@ public class Controller {//dummy commit
     public List<OderItemDto> getWebPage() {
         List<OderItemDto> orderList = new ArrayList<>();
         OderItemDto od = new OderItemDto();
-        ItemModel itemModel = itemRepo.findAll().getFirst();//add all
+        ItemModel itemModel = itemRepo.findAll().getFirst();//add all one
         Order order = orderRepo.findAll().getFirst();
         od.setItemModel(itemModel);
         od.setPrice(itemModel.getPrice());
