@@ -37,7 +37,7 @@ public class Controller {//dummy commit
     }
     @GetMapping("/how")
     public String helloAws() {
-        return "Hello CI/CD with AWS";
+        return "Hello CI/CD with AWS ";
     }
 
 
