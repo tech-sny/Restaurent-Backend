@@ -19,7 +19,7 @@ public class Controller {//dummy commit
     @Autowired
     ItemRepo itemRepo;
     @GetMapping("/get")
-    public List<OderItemDto> getWebPage() {
+    public OderItemDto getWebPage() {
         List<OderItemDto> orderList = new ArrayList<>();
         OderItemDto od = new OderItemDto();
         List<ItemModel> itemModel = itemRepo.findAll();//add all one
@@ -32,7 +32,7 @@ public class Controller {//dummy commit
         if(!order.isEmpty())
             od.setOrderModel(order.getFirst());
         orderList.add(od);
-        return orderList;
+        return od;
 
     }
     @GetMapping("/how")
