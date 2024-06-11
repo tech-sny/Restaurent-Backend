@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Delete Old docker container
         run: sudo docker rm -f cicd-pipeline-container || true
-      - name: Remove Docker image
-        run: docker rmi -f $(docker images -aq)
       - name: Pull Docker image
         run: sudo docker pull anand5394/restaurant:latest
       - name: Run Docker Container
