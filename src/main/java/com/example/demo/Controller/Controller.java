@@ -18,7 +18,7 @@ public class Controller {//dummy commit
     OrderRepo orderRepo;
     @Autowired
     ItemRepo itemRepo;
-    @GetMapping("/get")
+    @GetMapping("/get1")
     public OderItemDto getWebPage() {
         List<OderItemDto> orderList = new ArrayList<>();
         OderItemDto od = new OderItemDto();
